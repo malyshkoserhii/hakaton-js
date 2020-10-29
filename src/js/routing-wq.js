@@ -2,16 +2,16 @@ import watch from '../templates/watch-list.hbs';
 import queue from '../templates/queue-list.hbs';
 import { createRouter } from 'routerjs';
 
-const mainRef = document.querySelector('main');
+const libraryRef = document.querySelector('.library');
 
 function createWatchMarkup() {
   const markupWatch = watch();
-  mainRef.innerHTML = markupWatch;
+  libraryRef.innerHTML = markupWatch;
 }
 
 function createQueueMarkup() {
   const queueMarkup = queue();
-  mainRef.innerHTML = queueMarkup;
+  libraryRef.innerHTML = queueMarkup;
 }
 
 const router = createRouter()
