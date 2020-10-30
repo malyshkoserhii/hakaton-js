@@ -40,10 +40,10 @@ a {
 }
 
 .watch-queue {
-  height: 66px;
-  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.23));
-  background-color: #f3f6f6;
+  box-shadow: 0px 5px 9px 1px rgba(0, 0, 0, 0.23);
+  background-color: rgb(243, 246, 246);
   width: 320px;
+  padding: 12px 0 14px;
 
   @media (min-width: 768px) {
     width: 768px;
@@ -51,72 +51,68 @@ a {
 
   @media (min-width: 1024px) {
     width: 1024px;
-  }
-}
-
-.watch-queue__container {
-  display: block;
-
-  &::after {
-    display: block;
-    width: 280px;
-    content: '';
-    height: 2px;
-    background-color: rgb(77, 77, 77);
+    box-shadow: 0px 5px 5px -7px rgba(0, 0, 0, 0.75);
   }
 }
 
 .watch-queue-link {
   display: flex;
   justify-content: center;
-  padding: 12px 10px;
 
   &__item {
+    display: block;
     font-size: 16px;
-    color: #000;
+    color: rgb(0, 0, 0);
     letter-spacing: 0px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
-    line-height: 38px;
+    line-height: 40px;
     width: 140px;
-    height: 40px;
     text-align: center;
-    border-bottom: 1px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(156, 153, 165);
+  }
+}
 
-    &:hover {
-      background-color: #90c0ba;
-      color: #fff;
-      cursor: pointer;
-      border-bottom: none;
-    }
+.library {
+  padding: 14px 0 14px;
+
+  @media (min-width: 768px) {
+    padding: 28px 0 28px;
   }
 }
 
 .library-gallery {
-  padding: 10px 10px;
-
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 15px;
+    padding: 0 28px;
   }
 
   &__item {
-    padding-top: 10px;
+    @media (max-width: 767px) {
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+    }
 
-    @media (min-width: 767px) {
-      padding: 12px;
+    @media (min-width: 768px) {
+      &:not(:nth-last-child(-n + 2)) {
+        margin-bottom: 20px;
+      }
     }
   }
 
   &__image {
     width: 298px;
     height: 156px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin: 0 auto;
 
-    @media (min-width: 767px) {
-      width: 345px;
-      height: 181px;
+    @media (min-width: 768px) {
+      width: 344px;
+      height: 182px;
     }
 
     @media (min-width: 1024px) {
@@ -124,4 +120,10 @@ a {
       height: 244px;
     }
   }
+}
+
+.is-active {
+  background-color: rgb(119, 193, 187);
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(119, 193, 187);
 }
